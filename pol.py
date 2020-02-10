@@ -253,13 +253,13 @@ voteForGovernment(parties,points)
 while True:
     
 
-    leftWing = [pat for pat in parties if pat.polLean < 3]
+    leftWing = [pat for pat in parties if pat.polLean < 5 and not pat.category == "Ctr"]
     leftWing.sort(key= lambda x: len(x.members),reverse=True)
 
-    center = [pat for pat in parties if pat.polLean >= 3 and pat.polLean <= 7]
+    center = [pat for pat in parties if pat.category == "Ctr"]
     center.sort(key=lambda x: x.polLean)
     
-    rightWing = [pat for pat in parties if pat.polLean > 7]
+    rightWing = [pat for pat in parties if pat.polLean >= 5 and not pat.category == "Ctr"]
     rightWing.sort(key= lambda x: len(x.members),reverse=False)
 
     parties = leftWing + center + rightWing
@@ -272,7 +272,7 @@ while True:
         
     colors = [member.party.colour for party in parties for member in party.members]
     labels = [party.name for party in parties for member in party.members]
-    area = np.pi*6
+    area = np.pi*5
 
     # Plot
     for party in parties:
@@ -280,7 +280,7 @@ while True:
             x = [member.seat.x for member in party.members]
             y = [member.seat.y for member in party.members]
             colors = [member.party.colour for member in party.members]
-            plt.scatter(x, y, s=area, c=colors, alpha=1,label="[{}] {} ({})".format(party.category, party.name,len(party.members)))
+            plt.scatter(x, y, s=area, c=colors,alpha=1,label="[{}] {} ({})".format(party.category, party.name,len(party.members)))
     plt.ylim(-200, 500)
     if majority:
         pType = mDict["parties"][majority.key]["majority"]
@@ -291,10 +291,13 @@ while True:
     plt.xlim(000, 1000)
     plt.axis('off')
     plt.legend()
+    plt.ion()
+    plt.pause(0.01)
+    plt.clf()
     #for i,x in enumerate(points):
     #    plt.annotate(members[i].party.name,(x[0],x[1]))
 
-    plt.show()
+    plt.show(block=False)
     clearParliament()
     if input(">") == "q":
         break
