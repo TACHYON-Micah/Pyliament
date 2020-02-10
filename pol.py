@@ -170,7 +170,7 @@ def voteForGovernment(parties,points,fromExisting=False):
             pVotes[k] += rd.randint(1,1)
             totalVotes -= pVotes[k]
     for i in range(totalVotes):
-        party = rd.choice(rd.choices(population=list(pVotes.keys()),weights=[vv ** 1.4 for vv in list(pVotes.values())],k=10))
+        party = rd.choice(rd.choices(population=list(pVotes.keys()),weights=[vv ** 0.8 for vv in list(pVotes.values())],k=10))
         pVotes[party] += 1
     pSeats = {k:0 for k in parties}
     numSeats = len(points)
