@@ -293,15 +293,13 @@ while True:
     plt.legend()
     plt.ion()
     plt.pause(0.01)
-    plt.clf()
     #for i,x in enumerate(points):
     #    plt.annotate(members[i].party.name,(x[0],x[1]))
-
-    plt.show(block=False)
     clearParliament()
     if input(">") == "q":
         break
     else:
+        plt.clf()
         voteForGovernment(parties,points,fromExisting=True)
 
 
