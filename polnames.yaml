@@ -1,0 +1,195 @@
+country:
+  start:
+    - Bo
+    - Bar
+    - Ent
+    - Aus
+    - And
+    - Asi
+    - Aca
+    - Ere
+    - Fox
+    - Lot
+    - Kin
+    - Rea
+    - Rat
+    - Rut
+    - Pyg
+    - Gel
+    - Gor
+  middle:
+    - a
+    - o
+    - e
+    - i
+    - u
+    - el
+    - im
+    - es
+    - po
+    - ey
+    - te
+    - t
+  end:
+    - land
+    - ia
+    - oa
+    - ita
+    - ria
+    - bia
+    - sia
+    - pry
+    - ya
+    - a
+    - lee
+    - lyn
+
+parties:
+  communist:
+    majority: Comintern
+    prefix:
+      - The
+      - New
+      - CNAME
+    middle:
+      - Worker's
+      - People's
+      - Industry
+      - Social
+      - Communal
+      - Communist
+      - Equal
+      - Shared
+      - Liberation
+    suffix:
+      - Party
+      - Group
+      - Union
+      - League
+  socialist:
+    majority: Parliament
+    prefix:
+      - The
+      - New
+      - CNAME
+    middle:
+      - Worker's
+      - People's
+      - Social
+      - Socialist
+      - Equal
+      - Shared
+      - Affordable
+      - Universal
+      - Needs
+    suffix:
+      - Party
+      - Group
+      - Union
+      - League
+  liberal:
+    majority: Parliament
+    prefix:
+      - The
+      - New
+      - Social
+    middle:
+      - Liberal
+      - Liberty
+      - Democracy
+      - Elective
+      - Labour
+      - Green
+      - Eco
+      - Peace
+      - Citizen
+      - Civil
+      - One
+      - United
+      - CNAME
+    suffix:
+      - Party
+      - Voice
+      - Future
+      - Nation
+  centrist:
+    majority: Parliament
+    prefix:
+      - The
+      - Social
+    middle:
+      - Center
+      - Labour
+      - Balanced
+      - Balance
+      - Democratic
+      - Liberal
+      - Centrist
+      - Independent
+    suffix:
+      - Party
+      - Union
+      - Alliance
+      - Movement
+  conservative:
+    majority: Parliament
+    prefix:
+      - The
+      - Old
+      - Grand
+      - CNAME's
+    middle:
+      - National
+      - Conservative
+      - History
+      - Traditional
+      - Wealth
+      - Economy
+      - Rights
+      - Conventional
+      - Moderate
+      - Reaction
+      - Reason
+    suffix:
+      - Party
+      - Society
+      - Org
+  libertarian:
+    majority: Board
+    prefix:
+      - Free
+      - Open
+      - The
+      - CNAME
+    middle:
+      - Deregulation
+      - Libertarian
+      - Market
+      - Share
+      - Company
+      - Private
+      - Stock
+      - Stakeholder
+    suffix:
+      - Party
+      - Group
+      - Board
+  fascist:
+    majority: Dictatorship
+    prefix:
+      - One
+      - The
+      - CNAME
+    middle:
+      - Nation
+      - Class
+      - Directorate
+      - Unity
+      - Order
+      - Rule
+      - Right
+      - Heir
+    suffix:
+      - Party
+      - March
+      - Front
