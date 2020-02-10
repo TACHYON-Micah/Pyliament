@@ -131,7 +131,7 @@ class Member():
             if not parties or not rd.randint(0,100):
                 self.party = Party(self.econLean,self.polLean)
             else:
-                self.party = rd.choices(population=parties,weights=[len(p.members)**0.1 for p in parties])[0]
+                self.party = rd.choices(population=parties,weights=[len(p.members)**0.1 for p in parties],k=1)[0]
         self.party.join(self)        
 
 def arc(sides, radius=1, rotation=97, translation=None):
