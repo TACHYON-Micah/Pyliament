@@ -134,7 +134,10 @@ class Member():
                 try:
                     self.party = rd.choices(population=parties,weights=[len(p.members)**0.1 for p in parties],k=1)[0]
                 except IndexError:
-                    self.party = Party(self.econLean,self.polLean)
+                    if parties:
+                        self.party = rd.choice(parties)
+                    else:
+                        self.party = Party(self.econLean,self.polLean)
         self.party.join(self)        
 
 def arc(sides, radius=1, rotation=97, translation=None):
