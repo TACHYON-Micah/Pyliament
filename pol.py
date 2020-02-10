@@ -131,7 +131,10 @@ class Member():
             if not parties or not rd.randint(0,100):
                 self.party = Party(self.econLean,self.polLean)
             else:
-                self.party = rd.choices(population=parties,weights=[len(p.members)**0.1 for p in parties],k=1)[0]
+                try:
+                    self.party = rd.choices(population=parties,weights=[len(p.members)**0.1 for p in parties],k=1)[0]
+                except IndexError:
+                    self.party = Party(self.econLean,self.polLean)
         self.party.join(self)        
 
 def arc(sides, radius=1, rotation=97, translation=None):
@@ -170,7 +173,7 @@ def voteForGovernment(parties,points,fromExisting=False):
             pVotes[k] += rd.randint(1,1)
             totalVotes -= pVotes[k]
     for i in range(totalVotes):
-        party = rd.choice(rd.choices(population=list(pVotes.keys()),weights=[vv ** 0.8 for vv in list(pVotes.values())],k=10))
+        party = rd.choice(rd.choices(population=list(pVotes.keys()),weights=[vv for vv in list(pVotes.values())],k=10))
         pVotes[party] += 1
     pSeats = {k:0 for k in parties}
     numSeats = len(points)
